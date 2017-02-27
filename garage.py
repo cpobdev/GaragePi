@@ -105,13 +105,13 @@ def monitorMotion():
       print("MOTION")
       print elapsed
       motionDetected = True
-      pokeDoorRelay(1)
+ #     pokeDoorRelay(1)
       start = time.time()
     elif not isMotion() and motionDetected:
       elapsed = time.time() - start
       print("NO MOTION", elapsed)
       motionDetected = False
-      pokeDoorRelay(0)
+ #     pokeDoorRelay(0)
       start = time.time()
     time.sleep(0.1)
   return
@@ -146,7 +146,7 @@ def getStatus():
     return jsonify(status)
 
 def runService():
-  app.run(host='0.0.0.0', port=80, debug=True, use_reloader=False)
+  app.run(host='0.0.0.0', port=81, debug=True, use_reloader=False)
   return
 
 
@@ -177,7 +177,6 @@ if __name__ == "__main__":
     thread.start_new_thread( runService, () )
   except Exception, errtxt:
      print errtxt
-  print "derp"
 
   while True:
     time.sleep(1)
