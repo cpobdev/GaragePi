@@ -54,7 +54,7 @@ def parse(String description) {
 //    log.debug "params: ${params}"
    //log.debug "paramMap: ${paramMap}"
    def bodyText = new String(paramMap['body'].decodeBase64())
-   log.debug "LOL WHY APP PARSE: ${bodyText}"
+
    
    //sendEvent(name: "door", value: "closing")
 	// TODO: handle 'door' attribute
