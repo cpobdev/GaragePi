@@ -46,17 +46,17 @@ def parse(String description) {
     def paramMap = [:]
     
     def params = description.split(',').each { 
-    	def key = it.split(':')[0].trim()
+        def key = it.split(':')[0].trim()
         def val = it.split(':')[1].trim()
- //       log.debug("key: !${key}! val: !${val}!")
-    	paramMap[key] = val
+        // log.debug("key: !${key}! val: !${val}!")
+        paramMap[key] = val
     }
-//    log.debug "params: ${params}"
-   //log.debug "paramMap: ${paramMap}"
-   def bodyText = new String(paramMap['body'].decodeBase64())
-   log.debug "LOL WHY APP PARSE: ${bodyText}"
+    // log.debug "params: ${params}"
+    // log.debug "paramMap: ${paramMap}"
+    def bodyText = new String(paramMap['body'].decodeBase64())
+
    
-   //sendEvent(name: "door", value: "closing")
+    // sendEvent(name: "door", value: "closing")
 	// TODO: handle 'door' attribute
 	// TODO: handle 'motion' attribute
 
