@@ -145,6 +145,10 @@ def getStatus():
 
     return jsonify(status)
 
+@app.route('/ping')
+def doPing():
+    return jsonify(True)
+
 def runService():
   app.run(host='0.0.0.0', port=81, debug=True, use_reloader=False)
   return
